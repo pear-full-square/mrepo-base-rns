@@ -1,0 +1,17 @@
+{
+  "name": "mrepo-base-rns",
+  "version": "0.1.0",
+  "description": "Module: the mrepo rns protocol, a swarm's lookup db on every node: who is registered, where each lives, who is active.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "brittle-bare test/*.test.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "corestore": "7.16.1"
+  },
+  "devDependencies": {
+    "brittle": "4.5.0"
+  }
+}
