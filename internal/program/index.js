@@ -7,6 +7,9 @@ import Corestore from 'corestore'
 import { existsSync, writeFileSync, renameSync, rmSync, mkdirSync } from 'bare-fs'
 import { join } from 'bare-path'
 import { topics } from 'p2p-topic'
+// The lookup db's records' encoding: one line to change it (its type:
+// the rns package's types/lookup-entry.avsc).
+import * as handler from 'mycelium-value-json'
 import { socketOf, listen, request, open } from 'p2p-local'
 import { apply, view } from '../lookup/index.js'
 import { configOf, SIDE, SOCKET } from '../client/index.js'
@@ -27,7 +30,7 @@ export async function serve ({ dir, every = 500, now = () => Date.now() }) {
   mkdirSync(side, { recursive: true })
   const store = new Corestore(join(side, 'store'))
   await store.ready()
-  const t = topics(store)
+  const t = topics(store, { handler })
   const identity = await t.keyPair('node')
   const key = hex(identity.publicKey)
   const where = { machine: os.hostname(), folder: dir }
