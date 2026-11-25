@@ -42,7 +42,7 @@ haicc <master> rns/leave . swarm-1/node-2
 - **A lease is renewed by the key the node was registered with**: its
   rns' identity, a keypair of its store; another's is refused.
 - **On one machine** the route to the master is its socket, in its
-  folder (`p2p-local`); the lookup db says each node's machine and
+  folder (`p2p-process`); the lookup db says each node's machine and
   folder. The route to another machine is not built.
 - **Its side of the mrepo's folder**, `rns/`: its store, its config
   (`node.json`) and its socket: this machine's, not a layer's. The

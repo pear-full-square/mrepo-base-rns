@@ -2,7 +2,7 @@
 // mrepo's folder; its config, written for it (README.md beside it).
 import { existsSync, readFileSync, writeFileSync, renameSync, mkdirSync } from 'bare-fs'
 import { join } from 'bare-path'
-import { socketOf, request } from 'p2p-local'
+import { socketOf, request } from 'p2p-process'
 
 // The rns' side of an mrepo's folder: its store, its config, its socket.
 export const SIDE = 'rns'
