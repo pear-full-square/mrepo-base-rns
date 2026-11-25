@@ -2,7 +2,7 @@
 // registered, who is active (README.md beside it).
 import { existsSync } from 'bare-fs'
 import { join } from 'bare-path'
-import { socketOf } from 'p2p-local'
+import { socketOf } from 'p2p-process'
 import { ask, SIDE, SOCKET } from '../../internal/client/index.js'
 
 export async function status (exec) {
